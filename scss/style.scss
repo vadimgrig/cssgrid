@@ -10,7 +10,8 @@
 	// width: 1140px;
 	// margin: 82px auto 0 auto;
 	display: grid;
-	grid-template: repeat(3, minmax(100px, auto)) / repeat(3, minmax(150px, 300px)) ;
+	// grid-template: repeat(3, minmax(100px, auto)) / repeat(3, minmax(150px, 300px));
+	grid-template: [row1s] 150px [row2s] 150px [row3s] 150px/ [col1s] 150px [col2s] 150px [col3s] 150px; //найминг колонок и линий
 	grid-auto-rows: minmax(100px, auto);
 	// grid-auto-flow: column;
 
@@ -27,25 +28,35 @@
 	// column-gap: 20px;
 	// row-gap: 20px;
 	gap: 15px;
+	justify-content: space-around;
+
+	// place-content: ; = justify-content  + align-content  place = комбинирует свойства позиционирования
 }
 
 #first {
-	grid-column-start: 1;
-	grid-column-end: 4;
+	grid-column: 1 / 4;
+	// justify-self: center;
+	// align-self: end;
+	// grid-column-start: 1;
+	// grid-column-end: 4;
 }
 #second {
-	grid-row-start: 2;
-	grid-row-end: 4;
+	grid-row: 2 / 4;
+	// grid-row-start: 2;
+	// grid-row-end: 4;
 }
 #third {
-	grid-column-start: 1;
-	grid-column-end: 4;
+		grid-column: 1 / 4;
+	// grid-column-start: 1;
+	// grid-column-end: 4;
 }
 #fourth {
-	grid-row-start: 2;
-	grid-row-end: 4;
-	grid-column-start: 2;
-	grid-column-end: 4;
+	grid-column: 2 / 4;
+	// grid-column-start: 2;
+	// grid-column-end: 4;
+	grid-row: row2s / row3s; // обращение ксетке по заранее указаному имени
+	// grid-row-start: 2;
+	// grid-row-end: 4;
 }
 .grid-item {
 	display: flex;
